@@ -14,3 +14,6 @@ data/*
 # OS
 .DS_Store
 EOF
+
+#Personal docs tracking
+docs
