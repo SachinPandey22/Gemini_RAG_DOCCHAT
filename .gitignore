@@ -1,0 +1,16 @@
+# Basic files
+cat > .gitignore << 'EOF'
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+# Node (if you add a frontend later)
+node_modules/
+dist/
+# Data
+data/*
+!data/.gitkeep
+# OS
+.DS_Store
+EOF
