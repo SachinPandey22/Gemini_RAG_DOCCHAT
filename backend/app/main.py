@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .db.qdrant_client import ensure_collection
+from .routes import upload 
 
 app = FastAPI(title="Gemini RAG DocChat API")
 
@@ -12,6 +13,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.include_router(upload.router)
+
 @app.on_event("startup")
 def on_startup():
     ensure_collection()
@@ -19,6 +22,7 @@ def on_startup():
 @app.get("/health")
 def health():
     return {"status": "ok", "message": "API is running"}
+
 @app.get("/qdrant")
 def qdrant_ping():
     return {"collection": "docs", "status": "ready"}
