@@ -3,7 +3,7 @@ load_dotenv()  # This loads the .env file
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .db.qdrant_client import ensure_collection
-from .routes import upload, ingest_preview, index_route
+from .routes import upload, ingest_preview, index_route, search
 
 app = FastAPI(title="Gemini RAG DocChat API")
 
@@ -18,6 +18,7 @@ app.add_middleware(
 app.include_router(upload.router)
 app.include_router(ingest_preview.router)
 app.include_router(index_route.router)
+app.include_router(search.router)
 
 @app.on_event("startup")
 def on_startup():
