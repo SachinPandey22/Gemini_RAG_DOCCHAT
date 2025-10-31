@@ -94,7 +94,7 @@ def file_to_chunks(path: str, namespace: str) -> List[Chunk]:
             raw = extract_text_from_md(path)
         else:  # .docx
             raw = extract_text_from_docx(path)
-            clean = text_utils.normalize_whitespace(raw)
+        clean = text_utils.normalize_whitespace(raw)
         if clean.strip():
             for piece in chunk_text(clean):
                 all_chunks.append(Chunk(
