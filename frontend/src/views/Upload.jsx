@@ -37,7 +37,7 @@ export default function Upload({ namespace, setNamespace, onIndexed }) {
       <div style={{ marginTop: 12, border: "1px dashed #aaa", padding: 12 }}>
         <input
           type="file"
-          accept=".pdf,.txt,.md"
+          accept=".pdf,.txt,.md, .docx"
           multiple
           onChange={(e) => setFiles(Array.from(e.target.files || []))}
         />
