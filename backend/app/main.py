@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 load_dotenv()  # This loads the .env file
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from .db.qdrant_client import ensure_collection
+from .db.qdrant_client import ensure_collection, client, COLLECTION_NAME  # Add client and COLLECTION_NAME
 from .routes import upload, ingest_preview, index_route, search, ask
 
 app = FastAPI(title="Gemini RAG DocChat API")
