@@ -1,6 +1,6 @@
 // Simple API client for your FastAPI endpoints.
 // Change BASE if your backend runs elsewhere.
-export const BASE = "https://gemini-rag-docchat.onrender.com/";
+export const BASE = "https://gemini-rag-docchat.onrender.com";
 
 export async function uploadFiles({ namespace, files }) {
   const form = new FormData();
